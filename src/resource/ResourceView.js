@@ -318,7 +318,9 @@ function ResourceView(element, calendar, viewName) {
             headCell = dayHeadCells.eq(i);
             headCell.html(resources[i].name);
             headCell.attr("id", resources[i].id);
+            headCell.cssClass(resources[i].className);
             bodyCell = dayBodyCells.eq(i);
+            bodyCell.cssClass(resources[i].className);
             if (+date == +today) {
                 bodyCell.addClass(tm + '-state-highlight fc-today');
             }else{
