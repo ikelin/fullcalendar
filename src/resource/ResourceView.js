@@ -318,14 +318,14 @@ function ResourceView(element, calendar, viewName) {
             headCell = dayHeadCells.eq(i);
             headCell.html(resources[i].name);
             headCell.attr("id", resources[i].id);
-            headCell.cssClass(resources[i].className);
+            headCell.addClass(resources[i].className.join(' '));
             bodyCell = dayBodyCells.eq(i);
-            bodyCell.cssClass(resources[i].className);
             if (+date == +today) {
                 bodyCell.addClass(tm + '-state-highlight fc-today');
             }else{
                 bodyCell.removeClass(tm + '-state-highlight fc-today');
             }
+            bodyCell.addClass(resources[i].className.join(' '));
             setDayID(headCell.add(bodyCell), date);
         }
     }
